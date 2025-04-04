@@ -1,6 +1,10 @@
 # 바이낸스 거래량 알림_ made by KIMJUNHA(drkim)
 
 바이낸스 선물 시장에서 거래량 급증을 감지하는 크롬 확장프로그램입니다.
+![image](https://github.com/user-attachments/assets/a01d89a0-6e38-4574-8c5d-18b918614b3f)
+
+
+
 
 ## 기능
 
