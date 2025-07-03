@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>바이낸스 거래량 알림 대시보드</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header>
+    <h1>바이낸스 거래량 알림 대시보드</h1>
+    <div class="status">
+      <span id="status-text">상태: 모니터링 중지됨</span>
+      <button id="toggle-monitoring">시작</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="settings-panel">
+      <h2>설정</h2>
+      
+      <div class="setting-item">
+        <label for="timeframe">시간봉:</label>
+        <select id="timeframe">
+          <option value="1m">1분</option>
+          <option value="3m">3분</option>
+          <option value="5m">5분</option>
+          <option value="15m">15분</option>
+          <option value="30m">30분</option>
+          <option value="1h">1시간</option>
+        </select>
+      </div>
+      
+      <div class="setting-item">
+        <label for="volume-multiplier">거래량 배수:</label>
+        <input type="range" id="volume-multiplier" min="2" max="10" step="0.5">
+        <span id="volume-multiplier-value">3.0</span>배
+      </div>
+      
+      <div class="setting-item">
+        <label for="top-volume">상위 거래량:</label>
+        <input type="range" id="top-volume" min="10" max="100" step="5">
+        <span id="top-volume-value">70</span>%
+      </div>
+      
+      <div class="setting-item">
+        <label for="sound-enabled">소리 알림:</label>
+        <input type="checkbox" id="sound-enabled" checked>
+      </div>
+      
+      <button id="save-settings">설정 저장</button>
+    </div>
+    
+    <div class="alerts-panel">
+      <div class="alerts-header">
+        <h2>거래량 급증 알림</h2>
+        <div class="alerts-controls">
+          <input type="text" id="search-alerts" placeholder="코인 검색...">
+          <select id="alerts-filter">
+            <option value="all">모든 알림</option>
+            <option value="3">3배 이상</option>
+            <option value="5">5배 이상</option>
+            <option value="10">10배 이상</option>
+          </select>
+          <button id="clear-alerts">모든 알림 삭제</button>
+        </div>
+      </div>
+      
+      <div class="alerts-list" id="alerts-container">
+        <!-- 알림 목록이 여기에 표시됩니다 -->
+        <p class="no-alerts">아직 알림이 없습니다</p>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>바이낸스 거래량 알림 확장프로그램 v1.0</p>
+    <a href="https://github.com/yourusername/binance-volume-alert" target="_blank">GitHub에서 보기</a>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
